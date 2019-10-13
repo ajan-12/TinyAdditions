@@ -1,0 +1,67 @@
+name: TinyAdditions
+version: ${project.version}
+main: host.linox.tinyadditions.TinyAdditions
+api-version: 1.14
+authors: [ajan_12]
+description: Enhances your server with tiny awesome additions!
+
+commands:
+  forcemessage:
+    description: Forces a player to send a message.
+    usage: /forcemessage <player> <message...>
+  forcesudo:
+    description: Sudoes a player forcibly.
+    usage: /forcesudo <player> <command-to-execute> [args...]
+  permissionedmessage:
+    description: Sends a message to players with the permission node.
+    usage: /permissionedmessage <permission> <message...>
+  gettexture:
+    description: Gets the base64 encoded texture of the held player head.
+    usage: /gettexture
+  gettextureother:
+    description: Gets the base64 encoded texture of the item in the target player's target slot.
+    usage: /gettextureother <player> <slot>
+  settexture:
+    description: Sets the base64 encoded texture of the held player head.
+    usage: /settexture <texture>
+  spawn:
+    description: Teleports the player to a pre-defined location.
+    usage: /spawn
+  setspawn:
+    description: Sets the spawn of a world to a location.
+    usage: /setspawn <name> <target-world> <source-world>
+
+permissions:
+  tinyadditions.*:
+    description: Wildcard permissione node for all commands of the plugin.
+    default: op
+    children:
+    -  tinyadditions.forcemessage.use
+    -  tinyadditions.permissionedmessage.use
+    -  tinyadditions.gettexture.use
+    -  tinyadditions.gettexture.other.use
+    -  tinyadditions.settexture.use
+    -  tinyadditions.spawn.set
+    -  tinyadditions.spawn.use
+
+  tinyadditions.forcemessage.use:
+    description: The permission node that allows the usage of force messaging.
+    default: op
+  tinyadditions.permissionedmessage.use:
+    description: The permission node that allows the usage of permissioned messaging.
+    default: op
+  tinyadditions.forcesudo.use:
+    description: The permission node that allows the usage of force sudoing.
+    default: false
+  tinyadditions.gettexture.use:
+    description: The permission node that allows the usage of getting textures.
+    default: op
+  tinyadditions.settexture.use:
+    description: The permission node that allows the usage of setting textures.
+    default: op
+  tinyadditions.spawn.set:
+    description: The permission node that allows the usage of setting spawn.
+    default: op
+  tinyadditions.spawn.use:
+    description: The permission node that allows the usage of using spawn.
+    default: true

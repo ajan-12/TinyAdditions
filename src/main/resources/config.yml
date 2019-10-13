@@ -1,0 +1,23 @@
+settings:
+  auto-save:
+    enabled: true
+    # in ticks
+    interval: 6000
+
+  # 0 -> Only errors.
+  # 1 -> Logging player actions and errors.
+  # 2 -> Logging every action and error.
+  debug-level: 0
+
+  features:
+    ForceMessage: true
+    PermissionMessage: true
+    ForceSudo: true
+    GetTexture: true
+    SetTexture: true
+    Spawn: true
+
+  spawn-feature:
+    # true  : If a spawn isn't set when a player executes /spawn, they teleport to world spawn point.
+    # false : If a spawn isn't set when a player executes /spawn, they don't teleport anywhere.
+    world-spawn-default: false
