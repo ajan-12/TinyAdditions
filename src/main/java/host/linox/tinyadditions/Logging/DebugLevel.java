@@ -13,6 +13,6 @@ public enum DebugLevel {
     }
 
     public boolean isHigher(final DebugLevel debugLevel) {
-        return debugLevel.level > level;
+        return debugLevel.level >= level;
     }
 }
